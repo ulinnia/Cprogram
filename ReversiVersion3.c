@@ -99,7 +99,7 @@ int CoorEightNeighbor(int x, int y, int color, bool findspace, bool flip){
                                 SpaceAcross += InTheLine(x,y,dx,dy, color, findspace, flip);
                             }
                         }
-                    }else{  //flip function
+                    }else{              //flip function
                         if (ChessArray[x+dx][y+dy]==(3-color)){
                             int temp = InTheLine(x, y, dx, dy, color, findspace, flip);
                         }
