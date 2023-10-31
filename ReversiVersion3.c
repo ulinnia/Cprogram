@@ -92,7 +92,7 @@ int CoorEightNeighbor(int x, int y, int color, bool findspace, bool flip){
             if (ZONE(x+dx,y+dy))
                 if (dx|dy)              //not equal to the original block
                     if (!(flip)){       //no flip function
-                        if (!(ChessArray[x+dx][y+dy]==0 || ChessArray[x+dx][y+dy]==ChessArray[x][y])){
+                        if (ChessArray[x+dx][y+dy]==(3-color)){
                             if(findspace){
                                 int temp = InTheLine(x,y,dx,dy, color, findspace, flip);
                             }else{      //find how much chess I can eat
