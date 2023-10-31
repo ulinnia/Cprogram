@@ -90,7 +90,7 @@ int CoorEightNeighbor(int x, int y, int color, bool findspace, bool flip){
     for (int dx=-1; dx<=1; dx++)        //eight blocks check
         for (int dy=-1; dy<=1; dy++)
             if (ZONE(x+dx,y+dy))
-                if (!(dx==0 && dy==0))  //not equal to the original block
+                if (dx|dy)              //not equal to the original block
                     if (!(flip)){       //no flip function
                         if (!(ChessArray[x+dx][y+dy]==0 || ChessArray[x+dx][y+dy]==ChessArray[x][y])){
                             if(findspace){
