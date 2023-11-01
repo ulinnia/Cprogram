@@ -41,6 +41,13 @@ void PrintFunction(){
                     printf("%d",i-1);
                 }
                 printf(" %d",ChessArray[j][i-1]);
+                /*
+                if (ChessArray[j][i-1]==0){
+                    printf("  ");
+                }else{
+                    printf(" %d",ChessArray[j][i-1]);
+                }            print space not print 0
+                */
             }
             if (j==7){
                 printf("\n");
@@ -63,10 +70,12 @@ int InTheLine(int x, int y, int dx, int dy, int color, bool findspace, bool flip
         int target_x = x + i*dx;
         int target_y = y + i*dy;
         if (ZONE(target_x,target_y)){
-            if (ChessArray[target_x][target_y]==color){
+            if (ChessArray[target_x][target_y]==0 && ((!findspace)|flip)){
+                break;               //SpaceAcross Flip function if it is space, break 
+            }else if (ChessArray[target_x][target_y]==color){
                 if (findspace){     //find the space 0
                     break;
-                } else{
+                }else{
                     if(flip){       //find the color equal to player
                         for (int s=0; s<i; s++){
                             ChessArray[x+(s*dx)][y+(s*dy)]=color;
@@ -75,9 +84,9 @@ int InTheLine(int x, int y, int dx, int dy, int color, bool findspace, bool flip
                         SpaceAcross=(i-1);
                         break;
                     }
-                } 
+                }
             }else if (ChessArray[target_x][target_y]==0 && findspace){
-                SpaceCanPut[target_x][target_y]= color;
+                SpaceCanPut[target_x][target_y] = color;
                 break;
             }
         }
