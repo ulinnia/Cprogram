@@ -46,7 +46,7 @@ void PrintFunction(){
                     printf("  ");
                 }else{
                     printf(" %d",ChessArray[j][i-1]);
-                }            print space not print 0
+                }            //print space not print 0
                 */
             }
             if (j==7){
