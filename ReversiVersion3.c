@@ -201,7 +201,7 @@ void main(){
         if((player==1)? black:white){   //if you can't put then skip
             if (player==1) {
                 int x,y;
-                printf("You want to put at: (Please input like this:x(space)y)");
+                printf("You want to put at(Please input like this:x(KeaboardSpace)y): ");
                 scanf("%d%d",&x,&y);
                 FlipChess(x, y, 1);
             }else{
