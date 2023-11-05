@@ -80,6 +80,7 @@ int InTheLine(int x, int y, int dx, int dy, int color, bool findspace, bool flip
                         for (int s=0; s<i; s++){
                             ChessArray[x+(s*dx)][y+(s*dy)]=color;
                         }
+                        break;
                     }else{          //find how much chess I can eat
                         SpaceAcross=(i-1);
                         break;
