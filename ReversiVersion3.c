@@ -187,7 +187,7 @@ void WinnerJudge(){
     
 }
 
-void main(){
+int main(){
     int player = 1;                  //start at black(me)
     InputArray();
     bool white=1;
@@ -215,4 +215,5 @@ void main(){
         player=(player==1)? 2:1;        //player change
     }
     WinnerJudge();
+    return 0;
 }
