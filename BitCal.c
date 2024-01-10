@@ -8,7 +8,7 @@ uint16_t cheese[MAX]={0};       //棋盤從左到右(unsign integer 16bit(每兩
 
 void Push(int color, int x, int y){
     cheese[y] = cheese[y]&~(3<<((RANGE-x)*2));//清空該座標狀態(3 bin = 11)not運算(任何狀態和00 and 都等於00)，其他不變(跟1 and)
-    cheese[y] += (color<<((RANGE-x)*2));       //位移該狀態到該座標位置，把他加上去
+    cheese[y] ^= (color<<((RANGE-x)*2));       //位移該狀態到該座標位置，把他加上去
 }
 
 void Pull(int x, int y){
